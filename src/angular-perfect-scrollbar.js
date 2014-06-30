@@ -15,20 +15,28 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
       
       for (var i=0, l=psOptions.length; i<l; i++) {
         var opt = psOptions[i];
-        if ($attr[opt] != undefined) {
+        if ($attr[opt] !== undefined) {
           options[opt] = $parse($attr[opt])();
         }
       }
       
+      function update() {
+        $scope.$evalAsync(function() {
+          $elem.perfectScrollbar('update');
+        });
+      }
+
       $elem.perfectScrollbar(options);
 
       if ($attr.refreshOnChange) {
         $scope.$watchCollection($attr.refreshOnChange, function() {
-          $scope.$evalAsync(function() {
-            $elem.perfectScrollbar('update');
-          });
+          update();
         });
       }
+
+      $elem.bind('mouseenter', function(){
+        update();
+      });
       
       $elem.bind('$destroy', function() {
         $elem.perfectScrollbar('destroy');
