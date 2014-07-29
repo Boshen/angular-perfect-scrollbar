@@ -1,14 +1,20 @@
 {
   "name": "angular-perfect-scrollbar",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "private": false,
   "scripts": {
     "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Boshen/angular-perfect-scrollbar"
   },
   "dependencies": {
   },
   "devDependencies": {
     "grunt": "^0.4.2",
-    "grunt-contrib-jshint": "^0.8.0"
+    "grunt-contrib-jshint": "^0.8.0",
+    "grunt-contrib-uglify": "~0.5.1",
+    "load-grunt-tasks": "~0.2.0"
   }
 }

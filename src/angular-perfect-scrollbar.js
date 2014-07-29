@@ -1,3 +1,12 @@
+/*
+ * angular-perfect-scrollbar
+ * A small directive to allow the use of perfect-scrollbar (https://github.com/noraesae/perfect-scrollbar) in angular
+ * This is a fork of https://github.com/itsdrewmiller/angular-perfect-scrollbar
+ * By Boshen Chen
+ * Copyright (c) 2012, 2014 Hyeonje Alex Jun, Drew, Miller, Boshen Chen and other contributors
+ * Licensed under the MIT License
+ */
+
 angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse', '$timeout', function($parse, $timeout) {
   var psOptions = [
     'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
