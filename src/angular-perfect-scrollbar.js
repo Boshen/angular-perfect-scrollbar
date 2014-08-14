@@ -40,8 +40,8 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
       if ($attr.refreshOnChange) {
         $scope.$watchCollection($attr.refreshOnChange, function() {
           $timeout(function() {
-            $elem.perfectScrollbar('update');
             $elem.scrollTop(0);
+            $elem.perfectScrollbar('update');
           });
         });
       }
