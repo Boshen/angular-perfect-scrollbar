@@ -1,4 +1,4 @@
-/*
+/*!
  * angular-perfect-scrollbar
  * A small directive to allow the use of perfect-scrollbar (https://github.com/noraesae/perfect-scrollbar) in angular
  * This is a fork of https://github.com/itsdrewmiller/angular-perfect-scrollbar
@@ -13,7 +13,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
     'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
     'scrollYMarginOffset', 'includePadding'
   ];
-  
+
   return {
     restrict: 'E',
     transclude: true,
@@ -21,14 +21,14 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
     replace: true,
     link: function($scope, $elem, $attr) {
       var options = {};
-      
+
       for (var i=0, l=psOptions.length; i<l; i++) {
         var opt = psOptions[i];
         if ($attr[opt] !== undefined) {
           options[opt] = $parse($attr[opt])();
         }
       }
-      
+
       function update() {
         $scope.$evalAsync(function() {
           $elem.perfectScrollbar('update');
@@ -49,7 +49,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
       $elem.bind('mouseenter', function(){
         update();
       });
-      
+
       $elem.bind('$destroy', function() {
         $elem.perfectScrollbar('destroy');
       });

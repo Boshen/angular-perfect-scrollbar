@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        mangle: false,
+        mangle: true,
         preserveComments: 'some'
       },
       build: {
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  
+
   grunt.registerTask('default', ['jshint', 'uglify:build']);
 
 };
