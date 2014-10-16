@@ -46,10 +46,6 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
         });
       }
 
-      $elem.bind('mouseenter', function(){
-        update();
-      });
-
       $elem.bind('$destroy', function() {
         $elem.perfectScrollbar('destroy');
       });
